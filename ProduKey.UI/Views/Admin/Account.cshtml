@@ -1,0 +1,436 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!--**********************************Content body start***********************************-->
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Hesap Ayarları</a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <a data-toggle="modal" data-target="#basicModals" style="border: none; cursor: pointer; outline: none; margin-top: -30px;">
+                                <img src="~/Admin/images/user/3007823343.png" class="rounded-circle" style="background-size: cover;" width="120px" height="120px" alt="">
+                            </a>
+
+                            <div class="modal fade" id="basicModals">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content" style="margin-left: 100px;">
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-12">
+                                                        <img src="~/Admin/images/user/3007823343.png" width="100%" height="100%" alt="">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="card-widget__title text-dark mt-3">
+                                @ViewBag.UserName<span> </span>@ViewBag.UserSurname<span class="svg-icon svg-icon-1 svg-icon-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                                        <path d="M10.0813 3.7242C10.8849 2.16438 13.1151 2.16438 13.9187 3.7242V3.7242C14.4016 4.66147 15.4909 5.1127 16.4951 4.79139V4.79139C18.1663 4.25668 19.7433 5.83365 19.2086 7.50485V7.50485C18.8873 8.50905 19.3385 9.59842 20.2758 10.0813V10.0813C21.8356 10.8849 21.8356 13.1151 20.2758 13.9187V13.9187C19.3385 14.4016 18.8873 15.491 19.2086 16.4951V16.4951C19.7433 18.1663 18.1663 19.7433 16.4951 19.2086V19.2086C15.491 18.8873 14.4016 19.3385 13.9187 20.2758V20.2758C13.1151 21.8356 10.8849 21.8356 10.0813 20.2758V20.2758C9.59842 19.3385 8.50905 18.8873 7.50485 19.2086V19.2086C5.83365 19.7433 4.25668 18.1663 4.79139 16.4951V16.4951C5.1127 15.491 4.66147 14.4016 3.7242 13.9187V13.9187C2.16438 13.1151 2.16438 10.8849 3.7242 10.0813V10.0813C4.66147 9.59842 5.1127 8.50905 4.79139 7.50485V7.50485C4.25668 5.83365 5.83365 4.25668 7.50485 4.79139V4.79139C8.50905 5.1127 9.59842 4.66147 10.0813 3.7242V3.7242Z" fill="#00A3FF"></path>
+                                        <path class="permanent" d="M14.8563 9.1903C15.0606 8.94984 15.3771 8.9385 15.6175 9.14289C15.858 9.34728 15.8229 9.66433 15.6185 9.9048L11.863 14.6558C11.6554 14.9001 11.2876 14.9258 11.048 14.7128L8.47656 12.4271C8.24068 12.2174 8.21944 11.8563 8.42911 11.6204C8.63877 11.3845 8.99996 11.3633 9.23583 11.5729L11.3706 13.4705L14.8563 9.1903Z" fill="white"></path>
+                                    </svg>
+                                </span>
+                            </h4>
+
+                            <p class="text-success">Şirket Sahibi</p>
+                            <a class="btn gradient-4 btn-lg border-0 btn-rounded px-5" data-toggle="modal" data-target="#add_button">Profili Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="add_button">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                @using (Html.BeginForm("ProfileUpdate", "Admin"))
+                   {
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12">
+                                    <div class="form-validation">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="admin_name">
+                                                Ad<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" id="admin_name" name="UserName" placeholder="Ad" value="@ViewBag.UserName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-validation">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="admin_lastname">
+                                                Soyad<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" id="admin_lastname" name="UserSurname" placeholder="Soyad" value="@ViewBag.UserSurname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-validation">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="admin_tel">
+                                                İletişim Telefonu <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <input type="tel" class="form-control" id="admin_tel" name="Tel" placeholder="Tel" value="@ViewBag.Tel">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-validation">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="admin_email">
+                                                E-posta <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <input type="email" class="form-control" id="admin_email" name="Mail" placeholder="Eposta" value="@ViewBag.Mail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-validation">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="admin_tel">
+                                                Adres <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" id="admin_address" name="Address" rows="5" placeholder="Şirketinizin Adresi">@ViewBag.Address</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                        <button class="btn btn-success text-white" type="submit">Değişikleri Kaydet</button>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+    <!-- #/ container -->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body" style="padding-bottom: 0;">
+                        <h4 class="card-title" style="color: #181c32;">Kullanıcı Bilgileri</h4>
+                        <hr>
+                        <div class="form-validation">
+                            
+                                <div class="form-group row">
+
+                                    <label class="col-lg-4 col-form-label" style="color: #a1a5b7;  font-size: 0.950rem;">Ad Soyad</label>
+
+                                    <div class="col-lg-8">
+                                        <label class="col-lg-12 col-form-label" style="color: #3f4254; font-weight: 600; font-size: 0.950rem;">
+                                            @ViewBag.UserName<span> </span>@ViewBag.UserSurname
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label class="col-lg-4 col-form-label" style="color: #a1a5b7;  font-size: 0.950rem;">İletişim Telefonu</label>
+
+                                    <div class="col-lg-8">
+                                        <label class="col-lg-12 col-form-label" style="color: #3f4254; font-weight: 600; font-size: 0.950rem;">@ViewBag.Tel</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label class="col-lg-4 col-form-label" style="color: #a1a5b7;  font-size: 0.950rem;">E-posta </label>
+
+                                    <div class="col-lg-8">
+                                        <label class="col-lg-12 col-form-label" style="color: #3f4254; font-weight: 600; font-size: 0.950rem;">@ViewBag.Mail</label>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group row">
+
+                                    <label class="col-lg-4 col-form-label" style="color: #a1a5b7;  font-size: 0.950rem;">Adres</label>
+
+                                    <div class="col-lg-8">
+                                    <label class="col-lg-12 col-form-label" style="color: #3f4254; font-weight: 600; font-size: 0.950rem;">@ViewBag.Address</label>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <span class="display-5"><img src="~/Admin/images/media/instagram.png" /></span>
+                            <h2 class="mt-3">Instagram</h2>
+                                <span>@@</span>@ViewBag.Instagram<br><br>
+                            <a href="javascript:void()" data-toggle="modal" data-target="#instagram" class="btn gradient-9 btn-lg border-0 btn-rounded px-5">Ekle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <span class="display-5"><img src="~/Admin/images/media/twitter.png" /></span>
+                            <h2 class="mt-3">Twitter</h2>
+                            <span>@@</span>@ViewBag.Twitter<br><br><a href="javascript:void()" data-toggle="modal" data-target="#twitter" class="btn gradient-9 btn-lg border-0 btn-rounded px-5">Ekle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <span class="display-5"><img src="~/Admin/images/media/linkedin.png" /></span>
+                            <h2 class="mt-3">Linkedin</h2>
+                            <span>@@</span>@ViewBag.Linkedin<br><br><a href="javascript:void()" data-toggle="modal" data-target="#linkedin" class="btn gradient-9 btn-lg border-0 btn-rounded px-5">Ekle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <span class="display-5"><img src="~/Admin/images/media/facebook.png" /></span>
+                            <h2 class="mt-3">Facebook</h2>
+                            <span>@@</span>@ViewBag.Facebook<br><br><a href="javascript:void()" data-toggle="modal" data-target="#facebook" class="btn gradient-9 btn-lg border-0 btn-rounded px-5">Ekle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="instagram">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                @using (Html.BeginForm("InstagramUpdate", "Admin"))
+                   {
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <span class="display-5"><img src="~/Admin/images/media/instagram.png" /></span>
+                                        <h2 class="mt-3">Instagram</h2>
+                                        <div class="form-validation">
+                                            <div class="form-group row">
+
+                                                <input type="text" class="form-control" id="instagram" name="Instagram" placeholder="Hesap Ekleyin" value="@ViewBag.Instagram">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                        <button class="btn btn-success text-white" type="submit">Değişikleri Kaydet</button>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="twitter">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                @using (Html.BeginForm("TwitterUpdate", "Admin"))
+                   {
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <span class="display-5"><img src="~/Admin/images/media/twitter.png" /></span>
+                                        <h2 class="mt-3">Twitter</h2>
+                                        <div class="form-validation">
+                                            <div class="form-group row">
+
+                                                <input type="text" class="form-control" id="twitter" name="Twitter" placeholder="Hesap Ekleyin" value="@ViewBag.Twitter">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                        <button class="btn btn-success text-white" type="submit">Değişikleri Kaydet</button>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="linkedin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                @using (Html.BeginForm("LinkedinUpdate", "Admin"))
+                   {
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <span class="display-5"><img src="~/Admin/images/media/linkedin.png" /></span>
+                                        <h2 class="mt-3">Linkedin</h2>
+                                        <div class="form-validation">
+                                            <div class="form-group row">
+
+                                                <input type="text" class="form-control" id="linkedin" name="Linkedin" placeholder="Hesap Ekleyin" value="@ViewBag.Linkedin">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                        <button class="btn btn-success text-white" type="submit">Değişikleri Kaydet</button>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="facebook">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                @using (Html.BeginForm("FacebookUpdate", "Admin"))
+                   {
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <span class="display-5"><img src="~/Admin/images/media/facebook.png" /></span>
+                                        <h2 class="mt-3">Facebook</h2>
+                                        <div class="form-validation">
+                                            <div class="form-group row">
+
+                                                <input type="text" class="form-control" id="facebook" name="Facebook" placeholder="Hesap Ekleyin" value="@ViewBag.Facebook">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                        <button class="btn btn-success text-white" type="submit">Değişikleri Kaydet</button>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

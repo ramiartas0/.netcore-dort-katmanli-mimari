@@ -1,0 +1,237 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ProduKey | Yönetici Paneli</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="~/Admin/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="~/Admin/plugins/chartist/css/chartist.min.css">
+    <link href="~/Admin/plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href=" /Admin/css/style.css" rel="stylesheet">
+    <link href=" /Admin/css/dataTables.semanti.css" rel="stylesheet">
+    <link href="~/Admin/css/sitilkes.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/turkish-string.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
+
+</head>
+<body>
+
+
+    <div id="preloader">
+        <div class="loader">
+            <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#1A1A27">
+                <g fill="none" fill-rule="evenodd" stroke-width="2">
+                    <circle cx="22" cy="22" r="1">
+                        <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="22" cy="22" r="1">
+                        <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite" />
+                    </circle>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+
+
+    <!--**********************************
+            Main wrapper start
+        ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+                Nav header start
+            ***********************************-->
+        <div class="nav-header" style="background-color: #1a1a27;">
+            <div class="brand-logo">
+                <a href="index">
+
+                    <span class="brand-title">
+                        <h2 style="font-size: 25px; font-weight: bold; color: #fff;">Yönetici Paneli</h2>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!--**********************************
+                Nav header end
+            ***********************************-->
+        <!--**********************************
+                Header start
+            ***********************************-->
+        <div class="header">
+            <div class="header-content clearfix">
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user" data-toggle="dropdown">
+                                <span>Türkçe</span> <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">Türkçe</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative" data-toggle="dropdown">
+                                <img src="~/Admin/images/user/3007823343.png " class="rounded-circle" style="background-size: cover;" width="40" height="40" alt="">
+
+                                <!----<img src="images/user/1.png" height="40" width="40" alt="">--->
+                            </div>
+                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Action("Account", "Admin")">
+                                                <i class="icon-user"></i> <span>Hesabım</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Setting", "Admin", new {id = 1})"><i class="icon-globe"></i> <span>Site Ayarı</span></a>
+                                        </li>
+
+
+                                        <hr class="my-2">
+                                        <li><a href="@Url.Action("Index", "Login")"><i class="icon-logout"></i> <span>Çıkış Yap</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************Header end ti-comment-alt***********************************-->
+
+        <!--**********************************Content body start***********************************-->
+        @RenderBody()
+        <!--********************************** Content body end ***********************************-->
+        <!--********************************** Sidebar start ***********************************-->
+        <div class="nk-sidebar sidebar-now">
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label b-15" style="font-size: 11px;">Hızlı Erişim</li>
+
+                    <li>
+                        <a href="@Url.Action("Index", "Admin")" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Analiz Ekranı</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Inbox", "Admin")" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Gelen Kutusu</span>
+                        </a>
+                    </li>
+                    <li class="nav-label b-15" style="font-size: 11px;">Anasayfa İşlemleri</li>
+                    <li>
+                        <a href="@Url.Action("Slider", "Admin")" aria-expanded="false">
+                            <i class="icon-picture menu-icon"></i><span class="nav-text">Slider</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("About", "Admin")" aria-expanded="false">
+                            <i class="icon-book-open menu-icon"></i><span class="nav-text">Hakkımızda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Course", "Admin")" aria-expanded="false">
+                            <i class="icon-rocket menu-icon"></i><span class="nav-text">Kurslar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Educator", "Admin")" aria-expanded="false">
+                            <i class="icon-badge menu-icon"></i><span class="nav-text">Eğitmenler</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Comment", "Admin")" aria-expanded="false">
+                            <i class="icon-speech menu-icon"></i><span class="nav-text">Yorumlar</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!--********************************** Sidebar end ***********************************-->    <!--**********************************Footer start***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; 2022 Tüm Hakları Saklıdır.</a> </p>
+            </div>
+        </div>
+        <!--**********************************Footer end***********************************-->
+    </div>
+    <!--**********************************Main wrapper end***********************************-->
+    <!--**********************************
+            Scripts
+        ***********************************-->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="~/Admin/plugins/common/common.min.js"></script>
+    <script src="~/Admin/js/iller.js"></script>
+    <script src="~/Admin/js/dataTable-tr.json"></script>
+
+    <script src="~/Admin/js/custom.min.js"></script>
+    <script src="~/Admin/js/settings.js"></script>
+    <script src="~/Admin/js/gleek.js"></script>
+    <script src="~/Admin/js/styleSwitcher.js"></script>
+    <script src="~/Admin/plugins/sweetalert/js/sweetalert.min.js"></script>
+    <!-- Chartjs -->
+    <script src="~/Admin/plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="~/Admin/plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="~/Admin/plugins/d3v3/index.js"></script>
+    <script src="~/Admin/plugins/topojson/topojson.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="~/Admin/plugins/raphael/raphael.min.js"></script>
+    <script src="~/Admin/plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="~/Admin/plugins/moment/moment.min.js"></script>
+    <script src="~/Admin/plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+
+    <!-- ChartistJS -->
+    <script type="text/javascript" src="~/Admin/ckeditor/ckeditor.js"></script>
+    <script src="~/Admin/plugins/chartist/js/chartist.min.js"></script>
+    <script src="~/Admin/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace("editor")
+    </script>
+
+
+    <script type="text/javascript">
+        CKEDITOR.replace("editorthree")
+    </script>
+
+</body>
+
+</html>

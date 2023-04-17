@@ -1,0 +1,132 @@
+/*===========================
+     FAQ
+===========================*/
+.faq-wrap {
+	position: relative;
+	.faq-accordion {
+		.card {
+			border: none;
+			.card-header {
+				background-color: transparent;
+				border: none;
+				position: relative;
+				margin: 0;
+				padding: 0;
+				button {
+					font-size: 18px;
+					color: $heading-color;
+					font-family: $pop;
+					font-weight: 600;
+					border: none;
+					background-color: transparent;
+					width: 100%;
+					text-align: left;
+					padding: 22px 0;
+					border-bottom: 2px solid #e2e2e2;
+					padding-right: 50px;
+					@media #{$lg} {
+						font-size: 16px;
+					}
+					@media #{$xs} {
+						font-size: 16px;
+					}
+					.open-icon,
+					.close-icon {
+						position: absolute;
+						height: 45px;
+						width: 45px;
+						right: 0;
+						top: 50%;
+						line-height: 45px;
+						text-align: center;
+						@include transition(0.3s);
+						transform: translateY(-50%);
+					}
+					.close-icon {
+						visibility: hidden;
+					}
+					.open-icon {
+						visibility: visible;
+					}
+					&.active-accordion {
+						border-color: $primary-color;
+						color: $primary-color;
+						.close-icon {
+							visibility: visible;
+						}
+						.open-icon {
+							visibility: hidden;
+						}
+					}
+				}
+			}
+			.card-body {
+				padding: 20px 0 10px 0;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+/*===========================
+     FAQ Sidebar
+===========================*/
+.faq-sidebar {
+	@media #{$md} {
+		margin-top: 100px;
+	}
+	@media #{$xs} {
+		margin-top: 100px;
+	}
+	.widget {
+		position: relative;
+		margin-bottom: 40px;
+		.widget-title {
+			font-size: 24px;
+			font-weight: 600;
+			position: relative;
+			padding-bottom: 25px;
+			margin-bottom: 35px;
+			@media #{$lg} {
+				font-size: 22px;
+			}
+			@media #{$xxs} {
+				font-size: 22px;
+			}
+			&::after {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 58px;
+				height: 3px;
+				background-color: $primary-color;
+				content: '';
+			}
+		}
+		&.form-widget {
+			form {
+				input,
+				textarea {
+					width: 100%;
+					height: 60px;
+					background-color: $white;
+					padding-left: 30px;
+					border: none;
+					margin-bottom: 10px;
+					background-color: #f0f8f4;
+				}
+				input,
+				textarea,
+				::placeholder {
+					font-size: 15px;
+					font-weight: 500;
+					font-family: $pop;
+				}
+				textarea {
+					height: 120px;
+					padding-top: 25px;
+				}
+			}
+		}
+	}
+}

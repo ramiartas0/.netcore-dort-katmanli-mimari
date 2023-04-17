@@ -1,0 +1,93 @@
+﻿@model ProduKey.Entity.Slider
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-body">
+    <div class="row page-titles mx-0 ">
+        <div style="width: 100%; height: 20px;  float: left; display: flex;  justify-content: space-between; padding-left: 22px;">
+            <h4 style="color: #1a1a27;">Slider Düzenle</h4>
+            <div class="col p-md-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Slider Düzenleme</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Slider Düzenle</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        @using (Html.BeginForm())
+                        {
+                            <div class="col-lg-12">
+                                <div class="form-validation">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="val-username">
+                                            Slider Resim<span class="text-danger"> *</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            @Html.TextBoxFor(x=> x.imageUrl, new {@class="form-control"})
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-validation">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="val-username">
+                                            Slider Başlık<span class="text-danger"> *</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            @Html.TextBoxFor(x=> x.SliderTitle, new {@class="form-control"})
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-validation">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="val-username">
+                                            Slider İçerik<span class="text-danger"> *</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            @Html.TextAreaFor(x=> x.SliderContent, new {@class="form-control"})
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-validation">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="val-username">
+                                            Slider Buton Adı<span class="text-danger"> *</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            @Html.TextBoxFor(x=> x.SliderButtonName, new {@class="form-control"})
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-validation">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="val-username">
+                                            Slider Buton Link<span class="text-danger"> *</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            @Html.TextBoxFor(x=> x.SliderButtonUrl, new {@class="form-control"})
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 d-flex justify-content-end">
+                                <button class="btn btn-success text-white" type="submit">Değişikleri Kaydet</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

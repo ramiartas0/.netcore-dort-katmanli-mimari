@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Hakkımızda</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                        <h5 class="mb-3">Yetenekli Eğitmenler</h5>
+                        <p>Sizler için en iyi eğitmenlerimiz ile çalışıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                        <h5 class="mb-3">Online Sınıflar</h5>
+                        <p>Yüz yüze eğitimden yeni eğitime geçişin mutululuğunu yaşıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                        <h5 class="mb-3">Online Ev Ödevleri</h5>
+                        <p>Daha anlaşılır ve verilerin kaybolması içi Online Ev Ödevi veriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                        <h5 class="mb-3">Online Kütüphane</h5>
+                        <p>Online Kitaplarımız ile Yazılımda daha öne çıkıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute" src="@ViewBag.AboutImage " alt="" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">Hakkımızda</h6>
+                <h1 class="mb-4">Kendine Değer Kat!</h1>
+                <span class="mb-4">@Html.Raw(ViewBag.AboutContent)</span><br />
+                <a class="btn btn-primary py-3 px-5 mt-2" href="@Url.Action("Index", "Hakkimizda")">İletişim</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->

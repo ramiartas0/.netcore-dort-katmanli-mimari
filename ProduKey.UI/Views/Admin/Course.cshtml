@@ -1,0 +1,357 @@
+﻿@model List<ProduKey.Entity.Course>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-body">
+    <div class="row page-titles mx-0 ">
+        <div style="width: 100%; height: 20px;  float: left; display: flex;  justify-content: space-between; padding-left: 22px;">
+            <h4 style="color: #1a1a27;">Kurslar</h4>
+            <div class="col p-md-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa İşlemleri</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Kurslar</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-start mb-2">
+                    <button data-toggle="modal" data-target="#addCourse" class="btn btn-light text-dark">
+                        <i class="icon-magnifier-add"></i>
+                        Kurs Ekle
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped verticle-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Kurs Resim</th>
+                                        <th scope="col">Kurs Adı</th>
+                                        <th scope="col">Kurs Detay</th>
+                                        <th scope="col">Eylem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <img src="@item.CourseImage" height="50px" width="100px" alt="">
+                                            </td>
+                                            <td>@item.CourseName</td>
+                                            <td>
+                                                <button type="button" class="btn btn-dark mr-3" data-toggle="modal" data-target="#detay_@item.ID">Detay</button>
+                                            </td>
+                                            <td>
+                                                <span class="d-flex justify-content-end">
+                                                    <button type="button" data-toggle="modal" data-target="#basicModal_@item.ID" class="btn btn-dark mr-3">
+                                                        <i class="fa fa-pencil color-muted"></i>
+                                                        Düzenle
+                                                    </button>
+                                                    <a href="@Url.Action("CourseDelete", "Admin", new {id = item.ID})" class=" btn btn-danger btn_delete">
+                                                        <i class="fa fa-close"></i>
+                                                        Sil
+                                                    </a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <div class="modal fade" id="detay_@item.ID">
+
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title" id="exampleModalLabel">Detay</h3>
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span>&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="container-fluid">
+                                                            <div class="row justify-content-center">
+
+                                                                <div class="col-lg-12">
+                                                                    <label>
+                                                                        Kurs Başlığı <span class="text-danger">*</span>
+                                                                        <p>@item.CourseName</p>
+                                                                </div>
+
+                                                                <div class="col-lg-12">
+                                                                    <label>
+                                                                        Kurs Fiyatı <span class="text-danger">*</span>
+                                                                        <p>@item.CoursePrice</p>
+                                                                </div>
+
+                                                                <div class="col-lg-12">
+                                                                    <label>
+                                                                        Kurs Eğitmeni <span class="text-danger">*</span>
+                                                                        <p>@item.CourseTeacher</p>
+                                                                </div>
+
+                                                                <div class="col-lg-12">
+                                                                    <label>
+                                                                        Kurs Saati <span class="text-danger">*</span>
+                                                                        <p>@item.CourseTimes.ToString("HH:mm")</p>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <label>
+                                                                        Kurs Kontenjanı <span class="text-danger">*</span>
+                                                                        <p>@item.CourseQuota</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="basicModal_@item.ID">
+
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    @using (Html.BeginForm("CourseUpdate", "Admin"))
+                                                    {
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span>&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row justify-content-center">
+
+                                                                    <div class="col-lg-12">
+                                                                        <div class="form-validation">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-form-label" for="services_img">Kurs Resimi <span class="text-danger">*</span></label>
+                                                                                <div class="col-lg-12">
+                                                                                    <input type="hidden" value="@item.ID" name="ID">
+                                                                                    <input type="text" name="CourseImage" class="form-control  form-control-solid" value="@item.CourseImage">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-12">
+                                                                        <div class="form-validation">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-form-label" for="CourseName">
+                                                                                    Kurs Başlığı <span class="text-danger">*</span>
+                                                                                </label>
+                                                                                <div class="col-lg-12">
+                                                                                    <input type="hidden" value="@item.ID" name="ID">
+                                                                                    <input type="text" class="form-control" name="CourseName" id="CourseName" value="@item.CourseName">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-12">
+                                                                        <div class="form-validation">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-form-label" for="CoursePrice">
+                                                                                    Kurs Fiyatı <span class="text-danger">*</span>
+                                                                                </label>
+                                                                                <div class="col-lg-12">
+                                                                                    <input type="hidden" value="@item.ID" name="ID">
+                                                                                    <input type="number" class="form-control" name="CoursePrice" id="CoursePrice" value="@item.CoursePrice">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="col-lg-12">
+                                                                        <div class="form-validation">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-form-label" for="CourseTeacher">
+                                                                                    Kurs Eğitmeni <span class="text-danger">*</span>
+                                                                                </label>
+                                                                                <div class="col-lg-12">
+                                                                                    <input type="hidden" value="@item.ID" name="ID">
+                                                                                    <select class="form-control" name="CourseTeacher" id="CourseTeacher">
+                                                                                        @foreach (var items in ViewBag.EducatorList){
+                                                                                            
+                                                                                            @if(item.CourseTeacher == items.Name){
+                                                                                            <option value="@items.Name" selected >@items.Name</option>    
+                                                                                            }
+                                                                                            @if (item.CourseTeacher != items.Name)
+                                                                                            {
+                                                                                                <option value="@items.Name">@items.Name</option>
+                                                                                            }
+                                                                                           }
+                                                                                        }
+                                                                                    </select>
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-12">
+                                                                        <div class="form-validation">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-form-label" for="CourseTimes">
+                                                                                    Kurs Saati <span class="text-danger">*</span>
+                                                                                </label>
+                                                                                <div class="col-lg-12">
+                                                                                    <input type="hidden" value="@item.ID" name="ID">
+                                                                                    <input type="time" class="form-control" name="CourseTimes" id="CourseTimes" value="@item.CourseTimes.ToString("HH:mm")">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-12">
+                                                                        <div class="form-validation">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-form-label" for="CourseQuota">
+                                                                                    Kurs Kontenjanı <span class="text-danger">*</span>
+                                                                                </label>
+                                                                                <div class="col-lg-12">
+                                                                                    <input type="hidden" value="@item.ID" name="ID">
+                                                                                    <input type="number" class="form-control" name="CourseQuota" id="CourseQuota" value="@item.CourseQuota">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                                                            <button class="btn btn-success text-white">Değişikleri Kaydet</button>
+                                                        </div>
+
+                                                    }
+                                                    @* <input type="hidden" name="ser_id" value="2">*@
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal fade" id="addCourse">
+
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    @using (Html.BeginForm("CourseInsert","Admin")){
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                <span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <div class="row justify-content-center">
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-validation">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label" for="services_img">Kurs Resimi <span class="text-danger">*</span></label>
+                                                                <div class="col-lg-12">
+                                                                    <input type="text" name="CourseImage"  class="form-control  form-control-solid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-validation">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label" for="CourseName">
+                                                                    Kurs Başlığı <span class="text-danger">*</span>
+                                                                </label>
+                                                                <div class="col-lg-12">
+                                                                    <input type="hidden" value="9" name="ser_id">
+                                                                    <input type="text" class="form-control" name="CourseName" id="CourseName" >
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-validation">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label" for="CoursePrice">
+                                                                    Kurs Fiyatı <span class="text-danger">*</span>
+                                                                </label>
+                                                                <div class="col-lg-12">
+                                                                    <input type="hidden" value="9" name="ser_id">
+                                                                    <input type="number" class="form-control" name="CoursePrice" id="CoursePrice">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-validation">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label" for="CourseTeacher">
+                                                                    Kurs Eğitmeni <span class="text-danger">*</span>
+                                                                </label>
+                                                                <div class="col-lg-12">
+                                                                    <input type="hidden" value="9" name="ser_id">
+                                                                    <select class="form-control" name="CourseTeacher" id="CourseTeacher">
+                                                                        @foreach (var items in ViewBag.EducatorList)
+                                                                        {
+                                                                            <option value="@items.Name">@items.Name</option>
+                                                                        }
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-validation">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label" for="CourseTimes">
+                                                                    Kurs Saati <span class="text-danger">*</span>
+                                                                </label>
+                                                                <div class="col-lg-12">
+                                                                    <input type="hidden" value="9" name="ser_id">
+                                                                    <input type="time" class="form-control" name="CourseTimes" id="CourseTimes" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="col-lg-12">
+                                                        <div class="form-validation">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label" for="CourseQuota">
+                                                                    Kurs Kontenjanı <span class="text-danger">*</span>
+                                                                </label>
+                                                                <div class="col-lg-12">
+                                                                    <input type="hidden" value="9" name="ser_id">
+                                                                    <input type="number" class="form-control" name="CourseQuota" id="CourseQuota">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark" data-dismiss="modal">Kapat</button>
+                                            <button class="btn btn-success text-white">Değişikleri Kaydet</button>
+                                        </div>
+                                   
+                                    }
+                                       @* <input type="hidden" name="ser_id" value="2">*@
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

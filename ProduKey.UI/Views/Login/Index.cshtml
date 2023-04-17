@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ProduKey | Yönetici Paneli</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="~/Admin/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="~/Admin/plugins/chartist/css/chartist.min.css">
+    <link href="~/Admin/plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href=" /Admin/css/style.css" rel="stylesheet">
+    <link href=" /Admin/css/dataTables.semanti.css" rel="stylesheet">
+    <link href="~/Admin/css/sitilkes.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/turkish-string.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
+    <style>
+        .show-hide {
+            position: absolute;
+            box-sizing: border-box;
+            float: left;
+            top: 242px;
+            right: 35px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="h-100">
+    <div class="login-form-bg" style="margin-top: 100px;">
+        <div class="container h-100">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="form-input-content">
+                        <div class="card login-form mb-0">
+                            <div class="card-body pt-5 pb-5">
+                                <h2 class="text-center" style="font-size: 25px; font-weight: bold;">ProduKey</h2>
+                                <h4 class="text-center text-light">Yönetici Giriş Ekranı</h4>
+                                @using (Html.BeginForm("Index", "Login"))
+                                {
+                                    <div class="form-group">
+                                        <input type="text" name="kadi" id="admin_email" class="form-control" placeholder="Eposta">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="admin_password" name="sifre" placeholder="Şifreniz">
+                                    </div>
+                                    <button class="btn login-form__btn submit  w-100">Giriş Yap</button>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="~/Admin/plugins/common/common.min.js"></script>
+    <script src="~/Admin/js/iller.js"></script>
+    <script src="~/Admin/js/dataTable-tr.json"></script>
+
+    <script src="~/Admin/js/custom.min.js"></script>
+    <script src="~/Admin/js/settings.js"></script>
+    <script src="~/Admin/js/gleek.js"></script>
+    <script src="~/Admin/js/styleSwitcher.js"></script>
+    <script src="~/Admin/plugins/sweetalert/js/sweetalert.min.js"></script>
+    <!-- Chartjs -->
+    <script src="~/Admin/plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="~/Admin/plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="~/Admin/plugins/d3v3/index.js"></script>
+    <script src="~/Admin/plugins/topojson/topojson.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="~/Admin/plugins/raphael/raphael.min.js"></script>
+    <script src="~/Admin/plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="~/Admin/plugins/moment/moment.min.js"></script>
+    <script src="~/Admin/plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+
+    <!-- ChartistJS -->
+    <script type="text/javascript" src="~/Admin/ckeditor/ckeditor.js"></script>
+    <script src="~/Admin/plugins/chartist/js/chartist.min.js"></script>
+    <script src="~/Admin/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace("editor")
+    </script>
+
+
+    <script type="text/javascript">
+        CKEDITOR.replace("editorthree")
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+/*===========================
+    Pricing
+===========================*/
+.pricing-box {
+	background-color: $white;
+	position: relative;
+	padding: 50px;
+	@media #{$lg} {
+		padding: 50px 30px;
+	}
+	@media #{$tiny} {
+		padding: 50px 30px;
+	}
+	&,
+	.pricing-title,
+	p,
+	.price-tag {
+		@include transition(0.3s);
+	}
+	.pricing-title {
+		font-size: 35px;
+		line-height: 1.143;
+		font-weight: 600;
+	}
+	p {
+		margin-bottom: 30px;
+	}
+	.price-tag {
+		position: relative;
+		display: block;
+		margin-top: 40px;
+		margin-bottom: 50px;
+		font-size: 80px;
+		line-height: 1;
+		font-weight: 300;
+		font-family: $pop;
+		color: $primary-color;
+		padding-left: 30px;
+		@media #{$tiny} {
+			font-size: 70px;
+		}
+		&::after {
+			position: absolute;
+			left: 0;
+			top: 8px;
+			font-size: 40px;
+			line-height: 1;
+			content: '$';
+			color: $primary-color;
+			@include transition(0.3s);
+		}
+	}
+	.main-btn {
+		margin-top: 10px;
+		&:hover {
+			color: $primary-color;
+		}
+	}
+	.pricing-icon {
+		position: absolute;
+		right: 40px;
+		top: 30px;
+		opacity: 0.1;
+		z-index: 1;
+		img {
+			max-width: 84px;
+		}
+	}
+	&.active {
+		background-color: $primary-color;
+		.pricing-title,
+		p,
+		.price-tag,
+		.price-tag::after {
+			color: $white;
+		}
+		.main-btn {
+			background-color: $white;
+			color: $primary-color;
+		}
+	}
+}
+
+.pricing-boxes {
+	background-color: #f0f8f4;
+}

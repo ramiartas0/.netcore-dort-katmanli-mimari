@@ -1,0 +1,363 @@
+/*===========================
+     Appointment
+===========================*/
+.appointment-section {
+	@media #{$md} {
+		&.pb-130 {
+			padding-bottom: 100px;
+		}
+	}
+	@media #{$xs} {
+		&.pb-130 {
+			padding-bottom: 80px;
+		}
+	}
+	.appointment-text {
+		height: 100%;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		padding: 0 80px;
+		color: $white;
+		@media #{$lg} {
+			padding: 0 30px;
+		}
+		@media #{$md} {
+			padding: 80px;
+		}
+		@media #{$xs} {
+			padding: 40px 30px;
+		}
+		@media #{$tiny} {
+			padding: 40px 20px;
+		}
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $heading-color;
+			content: '';
+			z-index: -2;
+			opacity: 0.85;
+		}
+		&::after {
+			position: absolute;
+			left: 30px;
+			right: 30px;
+			bottom: 30px;
+			top: 30px;
+			border: 1px solid $white;
+			z-index: -1;
+			content: '';
+			background-color: transparent;
+			opacity: 0.13;
+			@media #{$lg} {
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+				top: 15px;
+			}
+			@media #{$xs} {
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+				top: 15px;
+			}
+			@media #{$tiny} {
+				left: 10px;
+				right: 10px;
+				bottom: 10px;
+				top: 10px;
+			}
+		}
+		.section-title {
+			h2,
+			p {
+				color: $white;
+			}
+			p.title-tag::before {
+				background-color: $white;
+			}
+			h2 {
+				span {
+					-webkit-text-stroke: 1px $white;
+				}
+			}
+		}
+		.read-more-btn a {
+			font-family: $pop;
+			font-weight: 700;
+			font-size: 15px;
+			color: $third-color;
+			margin-top: 30px;
+			display: inline-block;
+			position: relative;
+			padding-bottom: 4px;
+			&::after {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $third-color;
+				content: '';
+				bottom: 0;
+			}
+		}
+	}
+	.appointment-form {
+		.form-title {
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			padding: 35px 0;
+			@media #{$xs} {
+				padding: 25px 0;
+			}
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				background-color: #29a268;
+				opacity: 0.7;
+				content: '';
+			}
+			h2 {
+				font-size: 45px;
+				color: $white;
+				@media #{$xs} {
+					font-size: 24px;
+				}
+			}
+		}
+		form {
+			background-size: cover;
+			background-position: center;
+			background-color: #f6f8ff;
+			padding: 60px 100px 75px 70px;
+			@media #{$lg} {
+				padding: 60px;
+			}
+			@media #{$md} {
+				padding: 80px;
+			}
+			@media #{$xs} {
+				padding: 40px 30px;
+			}
+			@media #{$tiny} {
+				padding: 40px 20px;
+			}
+			input,
+			textarea,
+			select,
+			.nice-select {
+				width: 100%;
+				border-radius: 5px;
+				height: 70px;
+				background-color: $white;
+				border: none;
+				padding-left: 30px;
+				padding-right: 50px;
+				line-height: 70px;
+			}
+			.nice-select {
+				.list {
+					width: 100%;
+				}
+				&::after {
+					right: 30px;
+					font-size: 16px;
+					border: 0;
+					font-family: 'Font Awesome 5 Pro';
+					font-weight: 400;
+					content: '\f107';
+					transform: rotate(0);
+					height: auto;
+					width: auto;
+					color: $primary-color;
+					line-height: 75px;
+					top: 0;
+					margin-top: 0;
+					transform-origin: 0;
+				}
+			}
+			input,
+			textarea,
+			::placeholder,
+			select {
+				font-size: 16px;
+				color: $text-color;
+			}
+			textarea {
+				height: 165px;
+				padding-right: 30px;
+				padding-top: 30px;
+				line-height: 1;
+			}
+			.input-group {
+				position: relative;
+				span.icon {
+					position: absolute;
+					right: 30px;
+					color: $primary-color;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			button {
+				border: none;
+				@media #{$tiny} {
+					width: 100%;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+.appointment-section-two {
+	position: relative;
+	margin-top: -215px;
+	z-index: 2;
+	@media #{$xs} {
+		margin-top: -115px;
+	}
+	.form-title {
+		background-color: $primary-color;
+		padding: 30px 0;
+		@media #{$md} {
+			padding: 30px 50px;
+		}
+		@media #{$xxs} {
+			padding: 30px;
+		}
+		@media #{$sm} {
+			padding: 30px 40px;
+		}
+		@media #{$tiny} {
+			padding: 20px;
+		}
+		h3 {
+			font-size: 35px;
+			color: $white;
+			line-height: 1;
+			@media #{$xxs} {
+				font-size: 26px;
+			}
+			@media #{$tiny} {
+				font-size: 22px;
+			}
+		}
+	}
+	.appointment-form {
+		background-color: #f6f8ff;
+		padding: 60px 0;
+		position: relative;
+		z-index: 1;
+		@media #{$md} {
+			padding: 50px;
+		}
+		@media #{$xxs} {
+			padding: 30px;
+		}
+		@media #{$sm} {
+			padding: 40px;
+		}
+		@media #{$tiny} {
+			padding: 30px 20px;
+		}
+		&::after {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-size: contain;
+			background-position: top;
+			background-repeat: no-repeat;
+			content: '';
+			background-image: url(../img/app-form-map.png);
+			z-index: -1;
+			@media #{$md} {
+				background-size: cover;
+			}
+		}
+		form {
+			input,
+			textarea,
+			select,
+			.nice-select {
+				width: 100%;
+				border-radius: 5px;
+				height: 70px;
+				background-color: $white;
+				border: none;
+				padding-left: 30px;
+				padding-right: 50px;
+				line-height: 70px;
+				@media #{$tiny} {
+					padding-left: 20px;
+					padding-right: 35px;
+				}
+			}
+			.nice-select {
+				.list {
+					width: 100%;
+				}
+				&::after {
+					right: 30px;
+					font-size: 16px;
+					border: 0;
+					font-family: 'Font Awesome 5 Pro';
+					font-weight: 400;
+					content: '\f107';
+					transform: rotate(0);
+					height: auto;
+					width: auto;
+					color: $primary-color;
+					line-height: 75px;
+					top: 0;
+					margin-top: 0;
+					transform-origin: 0;
+					@media #{$tiny} {
+						right: 15px;
+					}
+				}
+			}
+			input,
+			textarea,
+			::placeholder,
+			select {
+				font-size: 16px;
+				color: $text-color;
+			}
+			textarea {
+				height: 165px;
+				padding-right: 30px;
+				padding-top: 30px;
+				line-height: 1;
+			}
+			.input-group {
+				position: relative;
+				span.icon {
+					position: absolute;
+					right: 30px;
+					color: $primary-color;
+					top: 50%;
+					transform: translateY(-50%);
+					@media #{$tiny} {
+						right: 15px;
+					}
+				}
+			}
+			button {
+				border: none;
+				width: 100%;
+			}
+		}
+	}
+}

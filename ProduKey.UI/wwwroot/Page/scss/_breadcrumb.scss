@@ -1,0 +1,79 @@
+/*===========================
+     Breadcrumb
+===========================*/
+.breadcrumb-area {
+	padding-top: 330px;
+	padding-bottom: 205px;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-color: #222222;
+	z-index: 1;
+	@media #{$lg} {
+		padding-top: 280px;
+		padding-bottom: 150px;
+	}
+	@media #{$md} {
+		padding-top: 250px;
+		padding-bottom: 120px;
+	}
+	@media #{$xs} {
+		padding-top: 220px;
+		padding-bottom: 100px;
+	}
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		z-index: -1;
+		background: linear-gradient(
+			-180deg,
+			rgb(10, 16, 38) 0%,
+			rgba(10, 16, 38, 0.58) 79%,
+			rgba(10, 16, 38, 0.16863) 100%
+		);
+	}
+	.breadcrumb-text {
+		h1.page-title {
+			font-size: 110px;
+			color: $white;
+			line-height: 1;
+			font-weight: 600;
+			margin-bottom: 30px;
+			@media #{$md} {
+				font-size: 70px;
+			}
+			@media #{$xs} {
+				font-size: 40px;
+				margin-bottom: 20px;
+			}
+			@media #{$tiny} {
+				font-size: 34px;
+			}
+		}
+		ul {
+			li {
+				display: inline-block;
+				font-size: 24px;
+				@media #{$xs} {
+					font-size: 16px;
+				}
+				&,
+				a {
+					color: $white;
+				}
+				&.sep {
+					font-size: 18px;
+					margin: 0 15px;
+					@media #{$xs} {
+						font-size: 14px;
+						margin: 0px 10px;
+					}
+				}
+			}
+		}
+	}
+}

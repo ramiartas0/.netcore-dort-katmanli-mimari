@@ -1,0 +1,458 @@
+/*===========================
+     Project Box 
+===========================*/
+.single-project-box {
+	position: relative;
+	.project-img {
+		overflow: hidden;
+		img {
+			width: 100%;
+		}
+	}
+	&:hover {
+		.project-img img {
+			transform: scale(1.1);
+		}
+	}
+	.project-content {
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		bottom: 15px;
+		top: auto;
+		background-color: $white;
+		padding: 35px 40px;
+		@media #{$lg} {
+			padding: 30px 20px;
+		}
+		@media #{$xs} {
+			padding: 30px 20px;
+		}
+		@media #{$tiny} {
+			left: 10px;
+			right: 10px;
+		}
+		@include transition(0.3s);
+		h4 {
+			font-size: 24px;
+			margin-bottom: 10px;
+			@media #{$tiny} {
+				font-size: 20px;
+			}
+		}
+		.read-more-btn a {
+			font-family: $pop;
+			font-weight: 700;
+			font-size: 15px;
+			color: $primary-color;
+			margin-top: 20px;
+			display: inline-block;
+			position: relative;
+			padding-bottom: 4px;
+			&::after {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $primary-color;
+				content: '';
+				bottom: 0;
+			}
+			@media #{$tiny} {
+				font-size: 14px;
+			}
+		}
+		.hide-text,
+		.read-more-btn {
+			display: none;
+		}
+	}
+	&:hover {
+		.project-content {
+			padding: 45px 40px;
+			@media #{$lg} {
+				padding: 30px 20px;
+			}
+			@media #{$xs} {
+				padding: 30px 20px;
+			}
+		}
+	}
+}
+/*===========================
+     Project Box Two
+===========================*/
+.single-project-two {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 30px;
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $primary-color;
+		content: '';
+	}
+	.project-img {
+		width: 100%;
+		height: 300px;
+		background-size: cover;
+		background-position: center;
+	}
+	.project-content {
+		position: absolute;
+		left: 0;
+		bottom: 30px;
+		z-index: 2;
+		h4,
+		span {
+			color: $white;
+		}
+		h4 {
+			font-size: 24px;
+			margin-bottom: 10px;
+			@media #{$sm} {
+				font-size: 20px;
+			}
+		}
+	}
+	.project-link {
+		color: $white;
+		position: absolute;
+		right: 35px;
+		top: 0;
+		font-size: 50px;
+		color: $white;
+		z-index: 2;
+		line-height: 1;
+		@media #{$sm} {
+			font-size: 30px;
+			right: 20px;
+		}
+	}
+	&::after,
+	.project-content,
+	.project-link {
+		@include transition(0.3s);
+		visibility: hidden;
+		opacity: 0;
+	}
+	&:hover {
+		&::after {
+			visibility: visible;
+			opacity: 0.83;
+		}
+		.project-content {
+			visibility: visible;
+			opacity: 1;
+			left: 30px;
+			@media #{$sm} {
+				left: 15px;
+			}
+		}
+		.project-link {
+			opacity: 1;
+			visibility: visible;
+			top: 35px;
+			@media #{$sm} {
+				top: 20px;
+			}
+		}
+	}
+}
+/*===========================
+     Project Filter
+===========================*/
+.project-filter {
+	text-align: center;
+	margin-bottom: 50px;
+	ul {
+		li {
+			display: inline-block;
+			font-family: $pop;
+			font-weight: 700;
+			font-size: 18px;
+			margin: 0 10px;
+			cursor: pointer;
+			padding: 10px;
+			color: $heading-color;
+			@include transition(0.3s);
+			@media #{$lg} {
+				margin: 0 8px;
+			}
+			&.active,
+			&:hover {
+				color: $primary-color;
+			}
+			@media #{$md} {
+				font-size: 15px;
+				margin: 0;
+				padding: 10px 5px;
+			}
+			@media #{$xs} {
+				display: block;
+				margin: 0;
+				text-align: left;
+				padding: 5px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			@media #{$sm} {
+				display: inline-block;
+				font-size: 15px;
+			}
+		}
+	}
+}
+.project-area .container-fluid {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+/*===========================
+     Project Details
+===========================*/
+.project-details-wrap {
+	.details-content {
+		.title {
+			font-weight: 600;
+			font-size: 45px;
+			margin-bottom: 20px;
+			@media #{$xxs} {
+				font-size: 30px;
+			}
+		}
+		.project-list {
+			li {
+				padding-left: 80px;
+				position: relative;
+				min-height: 60px;
+				margin-bottom: 20px;
+				@media #{$xxs} {
+					padding-left: 0;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+				p {
+					margin-bottom: 0;
+				}
+				span.icon {
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					height: 60px;
+					width: 60px;
+					text-align: center;
+					line-height: 60px;
+					background-color: $primary-color;
+					color: $white;
+					font-size: 24px;
+					border-radius: 50%;
+					@media #{$xxs} {
+						display: none;
+					}
+				}
+			}
+		}
+		p {
+			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.sub-title {
+			font-size: 40px;
+			font-weight: 600;
+			margin-bottom: 30px;
+			@media #{$xxs} {
+				font-size: 25px;
+				margin-bottom: 20px;
+			}
+		}
+		.project-gallery {
+			margin: 45px 0;
+			.gallery-img {
+				img {
+					width: 100%;
+				}
+				&.video {
+					position: relative;
+					@media #{$xxs} {
+						margin-top: 30px;
+					}
+					&::after {
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						background-color: $secondary-color;
+						content: '';
+						opacity: 0.75;
+					}
+					.video-wrap {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						z-index: 2;
+						.popup-video {
+							position: relative;
+							height: 60px;
+							width: 60px;
+							border-radius: 50%;
+							background-color: $white;
+							color: $primary-color;
+							line-height: 60px;
+							text-align: center;
+							&::before {
+								position: absolute;
+								content: '';
+								left: 0;
+								top: 0;
+								height: 100%;
+								width: 100%;
+								border: 1px solid $white;
+								animation: ripple-white 1s linear infinite;
+								border-radius: 50%;
+							}
+							&::after {
+								position: absolute;
+								content: '';
+								left: 0;
+								top: 0;
+								height: 100%;
+								width: 100%;
+								border: 1px solid$white;
+								animation: ripple-white 1.5s linear infinite;
+								border-radius: 50%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.project-sidebar {
+		@media #{$md} {
+			margin-top: 100px;
+		}
+		@media #{$xs} {
+			margin-top: 100px;
+		}
+		.widget {
+			padding: 55px 40px;
+			background-color: #f0f8f4;
+			position: relative;
+			margin-bottom: 40px;
+			@media #{$lg} {
+				padding: 50px 30px;
+			}
+			@media #{$xxs} {
+				padding: 40px 25px;
+			}
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 4px;
+				width: 100%;
+				content: '';
+				background-color: $primary-color;
+			}
+			.widget-title {
+				font-size: 24px;
+				font-weight: 600;
+				position: relative;
+				padding-bottom: 25px;
+				margin-bottom: 35px;
+				@media #{$lg} {
+					font-size: 22px;
+				}
+				@media #{$xxs} {
+					font-size: 22px;
+				}
+				&::after {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 58px;
+					height: 3px;
+					background-color: $primary-color;
+					content: '';
+				}
+			}
+			&.project-information {
+				ul {
+					li {
+						font-size: 18px;
+						margin-bottom: 20px;
+						@media #{$lg} {
+							font-size: 16px;
+						}
+						@media #{$xxs} {
+							font-size: 15px;
+							margin-bottom: 10px;
+						}
+						&:last-child {
+							margin-bottom: 0;
+						}
+						span {
+							font-weight: 700;
+							color: $heading-color;
+							padding-left: 5px;
+						}
+					}
+				}
+			}
+			&.form-widget {
+				form {
+					input,
+					textarea {
+						width: 100%;
+						height: 60px;
+						background-color: $white;
+						padding-left: 30px;
+						border: none;
+						margin-bottom: 10px;
+					}
+					input,
+					textarea,
+					::placeholder {
+						font-size: 15px;
+						font-weight: 500;
+						font-family: $pop;
+					}
+					textarea {
+						height: 120px;
+						padding-top: 25px;
+					}
+				}
+			}
+			&.ad-widget {
+				padding: 0;
+				background-color: transparent;
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+/*===========================
+    Recent Project
+===========================*/
+.recent-project {
+	.section-title {
+		h2 {
+			@media #{$md} {
+				font-size: 40px;
+			}
+		}
+	}
+}

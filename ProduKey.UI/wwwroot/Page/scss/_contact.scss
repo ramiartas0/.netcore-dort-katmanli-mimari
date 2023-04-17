@@ -1,0 +1,103 @@
+/*===========================
+     Contact
+===========================*/
+
+.contact-info-boxes {
+	margin-bottom: 40px;
+	.info-box {
+		position: relative;
+		padding-left: 80px;
+		margin-bottom: 30px;
+		@media #{$xxs} {
+			padding-left: 70px;
+		}
+
+		&.location {
+			padding-left: 65px;
+			@media #{$xxs} {
+				padding-left: 70px;
+			}
+			@media #{$sm} {
+				padding-left: 80px;
+			}
+			@media #{$md} {
+				padding-left: 80px;
+			}
+		}
+		.icon {
+			font-size: 50px;
+			color: $primary-color;
+			position: absolute;
+			left: 0;
+			top: 0;
+			line-height: 1;
+			@media #{$xxs} {
+				font-size: 40px;
+			}
+		}
+		.title {
+			font-size: 18px;
+			font-family: $pop;
+			color: $text-color;
+			margin-bottom: 10px;
+			@media #{$xxs} {
+				font-size: 16px;
+			}
+		}
+		p.info {
+			font-size: 22px;
+			color: $heading-color;
+			font-weight: 600;
+			font-family: $pop;
+			line-height: 1;
+			@media #{$xxs} {
+				font-size: 18px;
+			}
+			a {
+				color: $heading-color;
+			}
+		}
+	}
+}
+
+.contact-form {
+	input,
+	textarea {
+		height: 55px;
+		width: 100%;
+		padding-left: 30px;
+		border: none;
+		border-bottom: 2px solid #dedede;
+		margin-bottom: 30px;
+		@include transition(0.3s);
+		&:focus {
+			border-color: $primary-color;
+			color: $primary-color;
+		}
+	}
+	input,
+	textarea,
+	::placeholder {
+		font-size: 16px;
+		font-weight: 600;
+		color: $heading-color;
+		font-family: $pop;
+	}
+	textarea {
+		height: 120px;
+		padding-top: 20px;
+	}
+	.main-btn {
+		margin-top: 10px;
+		padding: 0px 100px;
+	}
+}
+
+.contact-maps {
+	height: 750px;
+	width: 100%;
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+}

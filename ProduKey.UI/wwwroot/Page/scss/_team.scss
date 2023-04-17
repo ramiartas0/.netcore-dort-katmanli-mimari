@@ -1,0 +1,79 @@
+/*===========================
+     Team Css
+===========================*/
+.single-member-box {
+	position: relative;
+	margin-bottom: 100px;
+	.team-img {
+		overflow: hidden;
+		img {
+			width: 100%;
+		}
+	}
+	&:hover {
+		.team-img img {
+			transform: scale(1.1);
+		}
+	}
+	.team-content {
+		text-align: center;
+		border-radius: 8px;
+		box-shadow: 0px 10px 30px 0px rgba(201, 201, 201, 0.48);
+		background-color: $white;
+		position: absolute;
+		left: 40px;
+		right: 40px;
+		bottom: -40px;
+		top: auto;
+		padding: 30px 0;
+		@media #{$sm} {
+			left: 20px;
+			right: 20px;
+			padding: 30px 10px;
+		}
+		@media #{$tiny} {
+			left: 20px;
+			right: 20px;
+		}
+		h4 {
+			font-size: 24px;
+			letter-spacing: -1px;
+			margin-bottom: 10px;
+			@media #{$sm} {
+				font-size: 20px;
+			}
+		}
+		.team-post {
+			font-size: 16px;
+			color: $primary-color;
+			font-weight: 700;
+			line-height: 1;
+			@media #{$sm} {
+				font-size: 14px;
+			}
+		}
+		.social-icons {
+			margin-top: 20px;
+			display: none;
+			li {
+				display: inline-block;
+				a {
+					width: 35px;
+					height: 35px;
+					border-radius: 50%;
+					display: block;
+					background-color: #e9f5ef;
+					color: $primary-color;
+					line-height: 35px;
+					font-size: 13px;
+					margin: 0px 5px;
+					@include transition(0.4s);
+					&:hover {
+						background-color: $primary-color;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

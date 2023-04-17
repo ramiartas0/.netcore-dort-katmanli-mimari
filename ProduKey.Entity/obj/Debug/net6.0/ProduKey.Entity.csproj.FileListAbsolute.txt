@@ -1,0 +1,14 @@
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\bin\Debug\net6.0\ProduKey.Entity.deps.json
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\bin\Debug\net6.0\ProduKey.Entity.runtimeconfig.json
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\bin\Debug\net6.0\ProduKey.Entity.dll
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\bin\Debug\net6.0\ProduKey.Entity.pdb
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.csproj.AssemblyReference.cache
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.AssemblyInfoInputs.cache
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.AssemblyInfo.cs
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.csproj.CoreCompileInputs.cache
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.dll
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\refint\ProduKey.Entity.dll
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.pdb
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ProduKey.Entity.genruntimeconfig.cache
+C:\Users\ramia\source\repos\ProduKey\ProduKey.Entity\obj\Debug\net6.0\ref\ProduKey.Entity.dll

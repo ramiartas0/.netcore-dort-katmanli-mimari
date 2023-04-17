@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.SiteName</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="@ViewBag.Keywords" name="keywords">
+    <meta content="@ViewBag.Description" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/Page/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/Page/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Page/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Page/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>ProduKey</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="@Url.Action("Index", "Anasayfa")" class="nav-item nav-link">Anasayfa</a>
+                <a href="@Url.Action("Index", "Hakkimizda")" class="nav-item nav-link">Hakkımızda</a>
+                <a href="@Url.Action("Index", "Kurslar")" class="nav-item nav-link">Kurslarımız</a>
+                <a href="@Url.Action("Index", "Iletisim")" class="nav-item nav-link">İletisim</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    @RenderBody()
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ProduKey</h4>
+                    <div class="row g-2 pt-2">
+                        @Html.Raw(ViewBag.AboutContent.Substring(0,200))...
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Hızlı Linkler</h4>
+                    <a class="btn btn-link" href="@Url.Action("Index", "Anasayfa")">Anasayfa</a>
+                    <a class="btn btn-link" href="@Url.Action("Index", "Hakkimizda")">Hakkımızda</a>
+                    <a class="btn btn-link" href="@Url.Action("Index", "Kurslar")">Kurslarımız</a>
+                    <a class="btn btn-link" href="@Url.Action("Index", "Iletisim")">İletişim</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">İletişim</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>@ViewBag.Address</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>@ViewBag.Tel</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>@ViewBag.Mail</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/@ViewBag.Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/@ViewBag.Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/@ViewBag.Instagram/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/@ViewBag.Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; 2022 <a class="border-bottom" href="#">ProduKey</a>, Tüm Hakları Saklıdır.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Page/lib/wow/wow.min.js"></script>
+    <script src="~/Page/lib/easing/easing.min.js"></script>
+    <script src="~/Page/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Page/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/Page/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+/*===========================
+    Feature CSS
+===========================*/
+.single-feature-box {
+	background-color: $primary-color;
+	text-align: center;
+	padding: 80px 55px;
+	position: relative;
+	@include transition(0.3s);
+	z-index: 1;
+	@media #{$lg} {
+		padding: 50px 20px;
+	}
+	@media #{$md} {
+		padding: 55px 25px;
+	}
+	@media #{$xs} {
+		padding: 50px 25px;
+	}
+	@media #{$sm} {
+		padding: 50px 75px;
+	}
+	&,
+	a,
+	p,
+	i,
+	h4 {
+		color: $white;
+	}
+	h4.title {
+		font-size: 24px;
+		margin-bottom: 40px;
+		line-height: 32px;
+		line-height: 1.333;
+		@media #{$tiny} {
+			font-size: 20px;
+		}
+	}
+	.line {
+		position: relative;
+		height: 3px;
+		width: 60px;
+		background-color: $white;
+		margin-bottom: 30px;
+		&::before,
+		&::after {
+			position: absolute;
+			left: -30px;
+			top: 0;
+			height: 3px;
+			width: 20px;
+			content: '';
+			background-color: $white;
+		}
+		&::after {
+			left: auto;
+			right: -30px;
+		}
+	}
+	.learn-more {
+		font-size: 35px;
+		margin-top: 35px;
+		display: inline-block;
+	}
+	.icon {
+		margin-bottom: 20px;
+		i {
+			font-size: 115px;
+		}
+	}
+	.feature-count {
+		font-size: 80px;
+		font-family: $pop;
+		font-weight: bold;
+		line-height: 0.325;
+		position: absolute;
+		top: 50%;
+		left: calc(-50% + 20px);
+		transform: translateY(-50%) matrix(0, -1, 1, 0, 0, 0);
+		z-index: -1;
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke: 1px $white;
+		opacity: 0.1;
+		@media #{$lg} {
+			font-size: 60px;
+		}
+		@media #{$xs} {
+			font-size: 75px;
+		}
+		@media #{$sm} {
+			left: calc(-20% + 20px);
+		}
+		@media #{$tiny} {
+			font-size: 60px;
+		}
+	}
+
+	&.active {
+		background-color: $secondary-color;
+	}
+
+	&.style-two {
+		background-color: transparent;
+		padding: 0 25px;
+		background-color: $white;
+		box-shadow: 0px 16px 60px 0px rgba(201, 201, 201, 0.21);
+		margin-bottom: 30px;
+		@media #{$lg} {
+			padding: 0;
+		}
+		@media #{$md} {
+			padding: 0;
+		}
+		@media #{$xs} {
+			padding: 0;
+		}
+		&,
+		a,
+		p,
+		i {
+			color: $text-color;
+			@include transition(0.3s);
+		}
+		h4.title {
+			letter-spacing: -1px;
+			a {
+				color: $heading-color;
+			}
+			margin-bottom: 30px;
+			@include transition(0.3s);
+			@media #{$laptop} {
+				font-size: 22px;
+			}
+			@media #{$lg} {
+				font-size: 22px;
+			}
+			@media #{$md} {
+				font-size: 22px;
+			}
+		}
+		.featre-content {
+			padding: 40px 12px 40px 12px;
+			position: relative;
+			@media #{$lg} {
+				padding: 40px 10px;
+			}
+			@media #{$md} {
+				padding: 40px 15px;
+			}
+			@media #{$xs} {
+				padding: 40px 10px;
+			}
+			@media #{$sm} {
+				padding: 40px 30px;
+			}
+
+			.feature-count {
+				font-size: 220px;
+				line-height: 1;
+				top: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: -1;
+				opacity: 0.13;
+				letter-spacing: -3px;
+				-webkit-text-stroke: 1px $heading-color;
+			}
+		}
+		.learn-more {
+			font-size: 15px;
+			font-weight: 700;
+			position: relative;
+			padding-bottom: 4px;
+			i {
+				font-size: 16px;
+				margin-left: 10px;
+			}
+			&::after,
+			&::before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 2px;
+				background-color: $text-color;
+				left: 0;
+				bottom: 0;
+				@include transition(0.3s);
+				z-index: 1;
+			}
+			&::before {
+				background-color: $primary-color;
+				width: 0;
+				visibility: hidden;
+				opacity: 0;
+				z-index: 2;
+			}
+		}
+		.feature-thumb {
+			overflow: hidden;
+			.thumb {
+				background-size: cover;
+				background-position: center;
+				background-color: $primary-color;
+				width: 100%;
+				height: 255px;
+				@include transition(0.4s);
+			}
+		}
+		&.active {
+			h4.title a,
+			.learn-more,
+			i {
+				color: $primary-color;
+			}
+			.learn-more {
+				&::before {
+					visibility: visible;
+					width: 100%;
+					opacity: 1;
+				}
+			}
+			.feature-thumb {
+				.thumb {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+.feature-section {
+	position: relative;
+	margin-top: -80px;
+	z-index: 2;
+}

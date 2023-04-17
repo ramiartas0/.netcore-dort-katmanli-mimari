@@ -1,0 +1,90 @@
+/*===========================
+     Brand
+===========================*/
+.brand-section {
+	position: relative;
+	background-color: $primary-color;
+	padding: 90px 0;
+	@media #{$md} {
+		padding: 80px 0;
+	}
+	.shape-one {
+		border-radius: 50%;
+		background: linear-gradient(
+			-137deg,
+			rgb(168, 196, 10) 0%,
+			rgb(248, 122, 17) 100%
+		);
+		position: absolute;
+		width: 153px;
+		height: 153px;
+		top: -76.5px;
+		right: 150px;
+		z-index: 2;
+		@media #{$laptop} {
+			right: 20px;
+			height: 100px;
+			width: 100px;
+			top: -50px;
+		}
+		@media #{$lg} {
+			width: 100px;
+			height: 100px;
+			top: -50px;
+			right: 10px;
+		}
+		@media #{$md} {
+			width: 100px;
+			height: 100px;
+			top: -50px;
+			right: 10px;
+		}
+		@media #{$sm} {
+			width: 100px;
+			height: 100px;
+			top: -50px;
+			right: 10px;
+		}
+		@media #{$xs} {
+			display: none;
+		}
+	}
+	.shape-two {
+		left: 160px;
+		border-radius: 50%;
+		background: linear-gradient(
+			0deg,
+			rgb(253, 152, 59) 0%,
+			rgb(230, 28, 86) 100%
+		);
+		position: absolute;
+		width: 89px;
+		height: 89px;
+		bottom: -44.4px;
+		z-index: 2;
+		@media #{$laptop} {
+			left: 30px;
+		}
+		@media #{$lg} {
+			left: 20px;
+			width: 50px;
+			height: 50px;
+			bottom: -25px;
+		}
+		@media #{$md} {
+			left: 20px;
+			width: 50px;
+			height: 50px;
+			bottom: -25px;
+		}
+		@media #{$sm} {
+			left: 20px;
+			width: 50px;
+			height: 50px;
+			bottom: -25px;
+		}
+		@media #{$xs} {
+			display: none;
+		}
+	}
+}

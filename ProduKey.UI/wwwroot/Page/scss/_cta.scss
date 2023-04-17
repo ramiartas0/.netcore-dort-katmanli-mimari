@@ -1,0 +1,134 @@
+/*===========================
+     Call to action
+===========================*/
+.cta-section {
+	position: relative;
+	z-index: 1;
+	margin-top: -215px;
+	@media #{$xs} {
+		margin-top: -115px;
+	}
+	.cta-inner {
+		position: relative;
+		background-color: $third-color;
+		padding: 120px 0;
+		z-index: 1;
+		text-align: center;
+		@media only screen and (min-width: 1400px) {
+			margin-left: -100px;
+			margin-right: -100px;
+		}
+		@media #{$md} {
+			padding: 100px 0;
+		}
+		@media #{$xs} {
+			padding: 60px 0;
+		}
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../img/cta-bg.png);
+			background-position: center;
+			background-size: cover;
+			z-index: -1;
+			content: '';
+		}
+		.cta-text {
+			span {
+				font-size: 18px;
+				font-weight: 700;
+				color: #111111;
+				padding-bottom: 20px;
+				@media #{$md} {
+					font-size: 15px;
+					padding-bottom: 15px;
+				}
+				@media #{$xs} {
+					font-size: 14px;
+					padding-bottom: 10px;
+				}
+			}
+			h1 {
+				font-size: 60px;
+				font-weight: 600;
+				color: #111111;
+				line-height: 70px;
+				@media #{$md} {
+					font-size: 35px;
+					line-height: 45px;
+				}
+				@media #{$xs} {
+					font-size: 22px;
+					line-height: 32px;
+				}
+			}
+		}
+	}
+}
+/*===========================
+     Call to action two
+===========================*/
+.cta-section-two {
+	padding-top: 130px;
+	padding-bottom: 130px;
+	position: relative;
+	z-index: 1;
+	background-size: cover;
+	background-position: center;
+	@include transition(1s);
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		content: '';
+		opacity: 0.79;
+		background-color: $heading-color;
+	}
+	&,
+	span,
+	h1 {
+		color: $white;
+	}
+	span {
+		font-weight: 700;
+		font-size: 18px;
+		margin-bottom: 30px;
+		@media #{$md} {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		@media #{$xs} {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+	}
+	h1 {
+		font-size: 60px;
+		line-height: 1.167;
+		margin-bottom: 40px;
+		@media #{$md} {
+			font-size: 40px;
+			line-height: 1.4;
+		}
+		@media #{$xs} {
+			font-size: 22px;
+			line-height: 1.4;
+		}
+		@media #{$sm} {
+			font-size: 34px;
+			line-height: 1.4;
+		}
+	}
+	.main-btn {
+		@media #{$xs} {
+			padding: 0px 40px;
+			line-height: 60px;
+		}
+	}
+}
